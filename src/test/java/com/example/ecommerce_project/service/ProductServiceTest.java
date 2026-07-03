@@ -31,7 +31,7 @@ public class ProductServiceTest {
         sampleProduct = new Product();
         sampleProduct.setId(1L);
         sampleProduct.setProductName("iPhone 15");
-        sampleProduct.setPrice(2500);
+        sampleProduct.setPrice(2500.0);
         sampleProduct.setDescription("Apple phone");
     }
 
