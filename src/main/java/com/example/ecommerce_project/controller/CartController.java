@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/cart")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "https://merry-mandazi-9b28f2.netlify.app")
+@CrossOrigin(origins = "https://boisterous-twilight-75bbde.netlify.app")
 public class CartController {
 
     private final CartService cartService;
