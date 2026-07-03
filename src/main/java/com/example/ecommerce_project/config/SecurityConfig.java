@@ -31,8 +31,7 @@
             http
                     .cors(cors -> cors.configurationSource(request -> {
                         var corsConfig = new org.springframework.web.cors.CorsConfiguration();
-                        // შეცვლილია: setAllowedOrigins-ის ნაცვლად ვიყენებთ Patterns-ს ფიფქით
-                        corsConfig.setAllowedOriginPatterns(java.util.List.of("*"));
+                        corsConfig.setAllowedOrigins(java.util.List.of("https://merry-mandazi-9b28f2.netlify.app"));
                         corsConfig.setAllowedMethods(java.util.List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
                         corsConfig.setAllowedHeaders(java.util.List.of("*"));
                         corsConfig.setAllowCredentials(true);

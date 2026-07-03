@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-@CrossOrigin(origins = "https://boisterous-twilight-75bbde.netlify.app")
+@CrossOrigin(origins = "https://merry-mandazi-9b28f2.netlify.app")
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/product")

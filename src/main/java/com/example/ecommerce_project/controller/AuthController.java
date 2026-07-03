@@ -12,9 +12,8 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "https://boisterous-twilight-75bbde.netlify.app")
+@CrossOrigin(origins = "https://merry-mandazi-9b28f2.netlify.app")
 public class AuthController {
-    // change configuration
 
     private final AuthService authService;
 
