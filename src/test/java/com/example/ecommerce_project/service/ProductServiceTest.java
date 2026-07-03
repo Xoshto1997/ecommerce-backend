@@ -33,7 +33,7 @@ public class ProductServiceTest {
         sampleProduct.setProductName("iPhone 15");
         sampleProduct.setPrice(2500.0);
         sampleProduct.setDescription("Apple phone");
-    }
+    } // test
 
     @Test
     void should_Save_Product_Successfully() {
