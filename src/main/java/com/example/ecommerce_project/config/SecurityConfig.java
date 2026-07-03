@@ -31,7 +31,7 @@
             http
                     .cors(cors -> cors.configurationSource(request -> {
                         var corsConfig = new org.springframework.web.cors.CorsConfiguration();
-                        corsConfig.setAllowedOrigins(java.util.List.of("https://merry-mandazi-9b28f2.netlify.app"));
+                        corsConfig.setAllowedOrigins(java.util.List.of("https://boisterous-twilight-75bbde.netlify.app"));
                         corsConfig.setAllowedMethods(java.util.List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
                         corsConfig.setAllowedHeaders(java.util.List.of("*"));
                         corsConfig.setAllowCredentials(true);
