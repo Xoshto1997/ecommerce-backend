@@ -31,19 +31,21 @@
             http
                     .cors(cors -> cors.configurationSource(request -> {
                         var corsConfig = new org.springframework.web.cors.CorsConfiguration();
-                        corsConfig.setAllowedOrigins(java.util.List.of("https://boisterous-twilight-75bbde.netlify.app"));
+                        // 🚀 CORS-ის საბოლოო განადგურება საიმედო პატერნით
+                        corsConfig.setAllowedOriginPatterns(java.util.List.of("*"));
                         corsConfig.setAllowedMethods(java.util.List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
                         corsConfig.setAllowedHeaders(java.util.List.of("*"));
                         corsConfig.setAllowCredentials(true);
                         return corsConfig;
                     }))
                     .csrf(AbstractHttpConfigurer::disable)
-
                     .authorizeHttpRequests(auth -> auth
                             .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-
                             .requestMatchers("/api/auth/**", "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
-                            .requestMatchers(HttpMethod.GET, "/api/product/**").permitAll()
+
+                            // 🚀 მაქსიმალურად გაშლილი ლინკები პროდუქტებზე, 404/403 რომ გამოირიცხოს
+                            .requestMatchers(HttpMethod.GET, "/api/product", "/api/product/", "/api/product/**").permitAll()
+
                             .requestMatchers(HttpMethod.POST, "/api/product/**").hasRole("ADMIN")
                             .requestMatchers(HttpMethod.DELETE, "/api/product/**").hasRole("ADMIN")
                             .anyRequest().authenticated()
