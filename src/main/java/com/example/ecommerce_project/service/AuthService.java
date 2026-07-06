@@ -30,7 +30,7 @@ public class AuthService {
     public AuthResponse register(AuthRequest request) {
         var user = User.builder()
                 .email(request.getEmail())
-                .password(passwordEncoder.encode(request.getPassword())) // 🔐 პაროლის დაჰეშირება
+                .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.USER)
                 .build();
 
