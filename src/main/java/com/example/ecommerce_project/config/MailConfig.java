@@ -1,5 +1,6 @@
 package com.example.ecommerce_project.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -10,15 +11,20 @@ import java.util.Properties;
 @Configuration
 public class MailConfig {
 
+    @Value("${MAIL_USERNAME}")
+    private String mailUsername;
+
+    @Value("${MAIL_PASSWORD}")
+    private String mailPassword;
+
     @Bean
     public JavaMailSender javaMailSender() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         mailSender.setHost("smtp.gmail.com");
         mailSender.setPort(587);
 
-        mailSender.setUsername("pputeici@gmail.com");
-
-        mailSender.setPassword("klelqssxhguavhlv");
+        mailSender.setUsername(mailUsername);
+        mailSender.setPassword(mailPassword);
 
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.smtp.auth", "true");
