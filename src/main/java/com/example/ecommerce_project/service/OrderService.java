@@ -104,12 +104,11 @@ public class OrderService {
             List<AdminOrderResponse.AdminOrderItemDto> itemsDto = order.getOrderItems().stream().map(item -> {
                 String name = "უცნობი პროდუქტი";
                 if (item.getProduct() != null) {
-                    name = item.getProduct().getProductName(); // 💡 აი აქ ხდება რეალური სახელის წამოღება
+                    name = item.getProduct().getProductName(); 
                 }
                 return new AdminOrderResponse.AdminOrderItemDto(name, item.getQuantity());
             }).collect(Collectors.toList());
 
-            // ვაწყობთ სუფთა მზა ობიექტს
             return AdminOrderResponse.builder()
                     .id(order.getId())
                     .userEmail(order.getUserEmail())
@@ -121,7 +120,6 @@ public class OrderService {
         }).collect(Collectors.toList());
     }
 
-    // 2. შეკვეთის სტატუსის განახლება (მაგ. PENDING -> PAID ან SHIPPED)
     public Order updateOrderStatus(Long orderId, OrderStatus newStatus) {
         Order order = orderRepository.findById(orderId)
                 .orElseThrow(() -> new RuntimeException("შეკვეთა ვერ მოიძებნა!"));
