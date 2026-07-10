@@ -68,7 +68,7 @@ public class AuthService {
 
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(user.getEmail());
-        message.setSubject("პაროლის აღდგენა - E-Shop");
+        message.setSubject("პაროლის აღდგენა - Khoshto-Shop");
         message.setText("გამარჯობა, პაროლის აღდგენისთვის გადადით მოცემულ ლინკზე (ვადა 15 წუთი):\n" + resetLink);
 
         mailSender.send(message);
