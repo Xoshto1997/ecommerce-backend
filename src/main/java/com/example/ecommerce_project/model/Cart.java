@@ -1,6 +1,6 @@
 package com.example.ecommerce_project.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore; // 🚀 ეს იმპორტი დაამატე
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.ArrayList;
